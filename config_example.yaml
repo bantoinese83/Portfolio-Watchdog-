@@ -1,0 +1,15 @@
+credentials:
+  usernames:
+    demo_user:
+      email: demo@example.com
+      name: Demo User
+      password: "$2b$12$examplehashedpasswordstring"  # use stauth.Hasher to generate
+
+cookie:
+  name: "portfolio_watchdog_cookie"
+  key: "SOME_RANDOM_SECRET_KEY_CHANGE_THIS_IN_PRODUCTION"
+  expiry_days: 7
+
+preauthorized:
+  emails: []
+

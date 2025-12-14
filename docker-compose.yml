@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: portfolio_watchdog_db
+    environment:
+      POSTGRES_DB: portfolio_watchdog
+      POSTGRES_USER: watchdog_user
+      POSTGRES_PASSWORD: watchdog_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U watchdog_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: portfolio_watchdog_app
+    ports:
+      - "8501:8501"
+    environment:
+      DATABASE_URL: postgresql://watchdog_user:watchdog_password@db:5432/portfolio_watchdog
+      AUTH_CONFIG_PATH: config.yaml
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./config.yaml:/app/config.yaml
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
