@@ -4,9 +4,10 @@
 echo "Setting up RapidAPI for Portfolio Watchdog..."
 echo ""
 
-# Set RapidAPI key from the provided configuration
-export RAPIDAPI_KEY="15052fd3b7msh85597e335ff2a7bp169e53jsn5345b8fd7dd1"
-export RAPIDAPI_HOST="yahoo-finance166.p.rapidapi.com"
+# Set RapidAPI key (replace with your actual key)
+# Get your key from: https://rapidapi.com/
+export RAPIDAPI_KEY="${RAPIDAPI_KEY:-your-rapidapi-key-here}"
+export RAPIDAPI_HOST="${RAPIDAPI_HOST:-yahoo-finance166.p.rapidapi.com}"
 
 # Create .env file
 cat > .env << EOF

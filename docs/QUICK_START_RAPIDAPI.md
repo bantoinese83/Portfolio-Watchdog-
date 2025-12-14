@@ -8,11 +8,11 @@ You've provided a RapidAPI configuration. Here's how to set it up:
 
 ```bash
 # Linux/macOS
-export RAPIDAPI_KEY="15052fd3b7msh85597e335ff2a7bp169e53jsn5345b8fd7dd1"
+export RAPIDAPI_KEY="your-rapidapi-key-here"
 export RAPIDAPI_HOST="yahoo-finance166.p.rapidapi.com"
 
 # Windows (PowerShell)
-$env:RAPIDAPI_KEY="15052fd3b7msh85597e335ff2a7bp169e53jsn5345b8fd7dd1"
+$env:RAPIDAPI_KEY="your-rapidapi-key-here"
 $env:RAPIDAPI_HOST="yahoo-finance166.p.rapidapi.com"
 ```
 
@@ -21,7 +21,7 @@ $env:RAPIDAPI_HOST="yahoo-finance166.p.rapidapi.com"
 Create a `.env` file in the project root:
 
 ```bash
-RAPIDAPI_KEY=15052fd3b7msh85597e335ff2a7bp169e53jsn5345b8fd7dd1
+RAPIDAPI_KEY=your-rapidapi-key-here
 RAPIDAPI_HOST=yahoo-finance166.p.rapidapi.com
 ```
 
@@ -65,7 +65,7 @@ For AI assistant integration, your MCP config is:
         "--header",
         "x-api-host: yahoo-finance166.p.rapidapi.com",
         "--header",
-        "x-api-key: 15052fd3b7msh85597e335ff2a7bp169e53jsn5345b8fd7dd1"
+        "x-api-key: your-rapidapi-key-here"
       ]
     }
   }
